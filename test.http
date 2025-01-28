@@ -1,0 +1,79 @@
+### Get all books
+GET http://127.0.0.1:8000/books
+
+### Get a specific book by ID
+GET http://127.0.0.1:8000/books/1
+
+### Add a new book
+POST http://127.0.0.1:8000/books
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "The Great Gatsby",
+  "author_id": 1,
+  "price": 12.99,
+  "stock": 30
+}
+
+### Update an existing book
+PUT http://127.0.0.1:8000/books/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "The Great Gatsby - Updated",
+  "author_id": 1,
+  "price": 14.99,
+  "stock": 25
+}
+
+### Delete a book by ID
+DELETE http://127.0.0.1:8000/books/3
+
+### Get all authors
+GET http://127.0.0.1:8000/authors
+
+### Get a specific author by ID
+GET http://127.0.0.1:8000/authors/1
+
+### Add a new author
+POST http://127.0.0.1:8000/authors
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "F. Scott Fitzgerald",
+  "bio": "American novelist and author of The Great Gatsby."
+}
+
+### Update an existing author
+PUT http://127.0.0.1:8000/authors/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "F. Scott Fitzgerald - Updated",
+  "bio": "Updated biography."
+}
+
+### Delete an author by ID
+DELETE http://127.0.0.1:8000/authors/3
+
+### Create a new order
+POST http://127.0.0.1:8000/orders
+Content-Type: application/json
+
+{
+  "id": 1,
+  "book_id": 1,
+  "quantity": 2,
+  "total_price": 0,  // The server calculates this
+  "status": "pending"
+}
+
+### Get all orders
+GET http://127.0.0.1:8000/orders
+
+### Get a specific order by ID
+GET http://127.0.0.1:8000/orders/1
